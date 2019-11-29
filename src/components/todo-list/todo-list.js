@@ -1,5 +1,5 @@
 import React from "react";
-import {TodoItem} from './todo-item';
+import {TodoItem} from '../todo-item/todo-item';
 export function TodoList(props){
   return (
     <ul className="todos todos-custom">

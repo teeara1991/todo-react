@@ -1,29 +1,15 @@
-import React,{useReducer,useEffect} from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import "./index.css";
-import {TodoList} from './components/todo-list';
-import {TodoInput} from './components/todo-input';
-import  {initialState, reducer} from './reducer';
+import { initialState, reducer } from "./reducers/reducer";
+import App from './components/app/app';
 
-
-function App() {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    useEffect(
-      () => {
-        const data = JSON.parse(localStorage.getItem("storage"));
-        dispatch({type: 'load todos', payload: {data}})
-      },[]);
-      useEffect(
-        () => {
-          localStorage.setItem("storage", JSON.stringify(state.todos));
-        });
-    return (
-      <div>
-        <TodoInput onSubmit={(data) => dispatch({type: 'add todo', payload: data})}/>
-        <TodoList todos={state.todos} 
-         onDelete={(index) => dispatch({type: 'delete todo',payload: {index}})}
-         onComplete={(index) => dispatch({type: 'complete todo',payload: {index}})}/>
-      </div>
-    );
-  }
-ReactDOM.render(<App />, document.getElementById("root"));
+const store = createStore(reducer, initialState);
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

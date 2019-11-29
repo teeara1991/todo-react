@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<ul
+  className="todo-item "
+>
+  <input
+    checked={false}
+    type="checkbox"
+  />
+  <span
+    className="todo-text"
+  >
+    Buy groceries
+  </span>
+  <span
+    className="todo-trash"
+  >
+    <i
+      className="fas fa-trash-alt"
+    />
+  </span>
+</ul>
+`;

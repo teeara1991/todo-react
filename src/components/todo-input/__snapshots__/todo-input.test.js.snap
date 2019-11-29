@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<form
+  name="todo"
+  onSubmit={[Function]}
+>
+  <div
+    className="input-group mb-3"
+  >
+    <input
+      aria-describedby="basic-addon2"
+      autoFocus={true}
+      className="form-control"
+      name="todo_name"
+      placeholder="Добавить задачу"
+      type="text"
+    />
+    <div
+      className="input-group-append"
+    >
+      <button
+        className="btn btn-primary btn-outline-secondary"
+        type="submit"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</form>
+`;

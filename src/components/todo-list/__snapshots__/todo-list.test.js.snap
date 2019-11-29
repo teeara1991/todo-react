@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<ul
+  className="todos todos-custom"
+>
+  <TodoItem
+    completed={false}
+    key="0"
+    name="Buy groceries"
+    onComplete={[Function]}
+    onDelete={[Function]}
+  />
+  <TodoItem
+    completed={false}
+    key="1"
+    name="Change oil"
+    onComplete={[Function]}
+    onDelete={[Function]}
+  />
+</ul>
+`;

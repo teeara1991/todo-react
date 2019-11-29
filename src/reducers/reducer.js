@@ -1,31 +1,36 @@
-export function reducer(state, action) {
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  COMPLETE_TODO,
+  LOAD_TODOS
+} from '../constants/constants';
+
+export function reducer(state = [], action) {
   let todos = [...state.todos];
-  const index = action.payload.index;
   switch (action.type) {
-    case "add todo":
+    case ADD_TODO:
       const name = action.payload.data;
       todos.push({ name, checked: false, completed: false });
       return { ...state, todos };
-    case "delete todo":
-      todos.splice(index, 1);
+    case DELETE_TODO:
+      todos.splice(action.payload.index, 1);
       return { ...state, todos };
-    case "complete todo":
+    case COMPLETE_TODO:
+      const { index } = action.payload;
       todos[index].completed = !todos[index].completed;
       todos[index].completed
         ? (todos[index].checked = true)
         : (todos[index].checked = false);
       return { ...state, todos };
-    case "load todos":
-        const data = action.payload.data;
-        todos = (data && [...data]) || [];
-        return { ...state, todos }; 
+    case LOAD_TODOS:
+      const { data } = action.payload;
+      todos = (data && [...data]) || [];
+      return { ...state, todos };
     default:
-      throw new Error();
+      return state;
   }
 }
 
 export const initialState = {
   todos: []
 };
-
-

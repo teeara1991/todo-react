@@ -3,7 +3,7 @@ export function TodoInput(props){
   const onSubmit = event => {
     event.preventDefault();
     const todoName = event.target.todo_name
-    props.onSubmit({data: todoName.value});
+    props.onSubmit(todoName.value);
     todoName.value = "";
     todoName.focus();
   };

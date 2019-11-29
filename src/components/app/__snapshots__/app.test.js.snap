@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(App)>
+    <App
+      onComplete={[Function]}
+      onDelete={[Function]}
+      onLoad={[Function]}
+      onSubmit={[Function]}
+      todos={Array []}
+    >
+      <div>
+        <TodoInput
+          onSubmit={[Function]}
+        >
+          <form
+            name="todo"
+            onSubmit={[Function]}
+          >
+            <div
+              className="input-group mb-3"
+            >
+              <input
+                aria-describedby="basic-addon2"
+                autoFocus={true}
+                className="form-control"
+                name="todo_name"
+                placeholder="Добавить задачу"
+                type="text"
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="btn btn-primary btn-outline-secondary"
+                  type="submit"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </form>
+        </TodoInput>
+        <TodoList
+          onComplete={[Function]}
+          onDelete={[Function]}
+          todos={Array []}
+        >
+          <ul
+            className="todos todos-custom"
+          />
+        </TodoList>
+      </div>
+    </App>
+  </Connect(App)>
+</Provider>
+`;
